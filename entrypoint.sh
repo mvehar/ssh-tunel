@@ -2,6 +2,6 @@
 
 adduser -D ${USER} && echo "${USER}:${PASS}" | chpasswd
 
-ssh-keygen -t rsa -f /root/.ssh/id_rsa -N ""
+ssh-keygen -A
 
 /usr/sbin/sshd -D -e $@
