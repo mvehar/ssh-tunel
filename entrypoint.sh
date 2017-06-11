@@ -2,6 +2,8 @@
 
 adduser -D ${USER} && echo "${USER}:${PASS}" | chpasswd
 
+chown -R ${USER}:${USER} /home/${USER}/
+
 ssh-keygen -A
 
 sed -i s/[#]*PasswordAuthentication.*/PasswordAuthentication\ yes/ /etc/ssh/sshd_config 
