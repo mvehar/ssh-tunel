@@ -1,6 +1,6 @@
 #!/bin/sh
 
-adduser -D ${USER}  echo "${USER}:${PASS}" | chpasswd
+adduser -D ${USER} && echo "${USER}:${PASS}" | chpasswd
 
 sed -i s/[#]*PasswordAuthentication.*/PasswordAuthentication\ yes/ /etc/ssh/sshd_config 
 sed -i s/[#]*PubkeyAuthentication.*/PubkeyAuthentication\ yes/ /etc/ssh/sshd_config
