@@ -10,7 +10,7 @@ RUN apk --no-cache add --update  openssh-server \
   && sed -i s/#PubkeyAuthentication.*/PubkeyAuthentication\ yes/ /etc/ssh/sshd_config \
   && sed -i s/#AllowTcpForwarding.*/AllowTcpForwarding\ yes/ /etc/ssh/sshd_config \
   && sed -i s/#GatewayPorts.*/GatewayPorts\ yes/ /etc/ssh/sshd_config \
-  && sed -i s/#StrictHostKeyChecking.*/StrictHostKeyChecking\ no/ /etc/ssh/sshd_config
+  && sed -i s/#ClientAliveInterval.*/ClientAliveInterval\ 15/ /etc/ssh/sshd_config
 
 ADD entrypoint.sh /
 
